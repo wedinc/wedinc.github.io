@@ -13,6 +13,6 @@
 </template>
 
 <script setup lang="ts">
-import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
-const query: QueryBuilderParams = { sort: [{ date: -1 }] }
+  import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
+  const query: QueryBuilderParams = { sort: [{ date: -1 }] }
 </script>
