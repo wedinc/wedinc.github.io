@@ -7,3 +7,9 @@ date: '2021-10-20'
 # test
 
 [Back home](/)
+
+## code block
+
+```ts
+const foo = 'hello'
+```
