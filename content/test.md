@@ -1,9 +1,9 @@
 ---
-title: 'about page'
+title: 'test'
 description: 'meta description of the page'
-date: '2021-10-21'
+date: '2021-10-20'
 ---
 
-# About Content v2
+# test
 
 [Back home](/)

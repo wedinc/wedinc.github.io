@@ -1,3 +1,9 @@
+---
+title: 'Nuxt Content'
+description: 'meta description of the page'
+date: '2020-10-21'
+---
+
 # Nuxt Content
 
 This page corresponds to the `/` route of your website. You can delete it or create another file in the `content/` directory.
