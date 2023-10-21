@@ -1079,6 +1079,11 @@
     eslint-plugin-vue "^9.7.0"
     local-pkg "^0.4.2"
 
+"@nuxtjs/google-gtag@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/google-gtag/-/google-gtag-1.0.4.tgz#57562d8ec4c7694573e77edf72097da4a34b0d68"
+  integrity sha512-0Xgbx1uQ9pKeV2QdU9xoxJVdgH66qyGQJ0l8pzVxz5X476qvJunj6fbcjWk0gT+MEX/VOAhfT/zw0Z1z9q9oNg==
+
 "@nuxtjs/mdc@^0.2.1":
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/@nuxtjs/mdc/-/mdc-0.2.3.tgz#bc20f8d374087d859270aab8a3a5275ef399c754"
