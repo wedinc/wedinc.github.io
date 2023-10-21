@@ -2,15 +2,18 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
-    '@vueuse/nuxt',
     '@nuxt/content',
-    ['@nuxtjs/google-gtag', { id: 'G-8E7TW1CHNY' }],
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '@vueuse/nuxt',
+    'nuxt-gtag'
   ],
   content: {
     documentDriven: true,
     highlight: {
       theme: 'monokai'
     }
+  },
+  gtag: {
+    id: 'G-8E7TW1CHNY'
   }
 })
