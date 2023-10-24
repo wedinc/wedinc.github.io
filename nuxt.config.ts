@@ -8,10 +8,7 @@ export default defineNuxtConfig({
         {
           rel: 'icon',
           type: 'image/x-icon',
-          href:
-            process.env.NODE_ENV === 'production'
-              ? '/wedinc.github.io/favicon.ico'
-              : '/favicon.ico'
+          href: '/favicon.ico'
         }
       ]
     }
