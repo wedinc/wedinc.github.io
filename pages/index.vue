@@ -3,9 +3,14 @@
     <ContentList v-slot="{ list }" :query="query">
       <ul v-for="article in list" :key="article._path">
         <li>
-          <NuxtLink :to="article._path">
-            {{ article.title }}
-          </NuxtLink>
+          <Card
+            :title="article.title"
+            :description="article.description"
+            :date="article.date"
+            :author="article.author"
+            :image="article.image"
+            :path="article._path"
+          />
         </li>
       </ul>
     </ContentList>
