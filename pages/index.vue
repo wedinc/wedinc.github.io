@@ -8,9 +8,7 @@
             :description="article.description"
             :date="article.date"
             :author="article.author"
-            :image="
-              article.image ? `thumbnails/${article.image}` : 'wed-logo.png'
-            "
+            :image="article.image"
             :path="article._path"
           />
         </li>
