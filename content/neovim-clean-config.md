@@ -247,13 +247,3 @@ VSCode の Vim Plugin とかではなく Neovim だけなので、Terminal Emula
 最後に、僕の [dotfiles](https://github.com/yanskun/dotfiles) です。
 
 `./vim` のなかに今回紹介したファイルが入ってます。
-
----
-
-<aside>
-🎨 WEDでは一緒に働くエンジニアを探してます！
-楽しく、面白いプロダクトを作りたいエンジニアのみなさん、カジュアルにお話しましょう！
-
-</aside>
-
-[Posts](<../Others 5c3a090b812f411182a97204ea9ef458/HQ 66074c71e9564db9b128aff4faa2c776/Engineer Recruiting 5a0fffa5a4664d4584140faef004e71f/PR 07ac73d0646b44f494d2259904320e4a/wed dev b772d469a6f747748b62d65d96ed8131/ブログ記事のコンポーネント ca6c06df4fd6482097650840ae81c305/Posts 761d81956fc241e5b1dabc64c2d0a4d6.csv>)
