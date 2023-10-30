@@ -25,7 +25,7 @@ export default defineNuxtConfig({
     documentDriven: true,
     highlight: {
       theme: 'monokai',
-      preload: ['python']
+      preload: ['python', 'lua']
     }
   },
   gtag: {
