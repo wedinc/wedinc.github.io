@@ -1,6 +1,8 @@
 <template>
   <main>
-    <ContentRenderer v-if="data" :value="data" />
+    <article class="prose">
+      <ContentRenderer v-if="data" :value="data" />
+    </article>
   </main>
 </template>
 
