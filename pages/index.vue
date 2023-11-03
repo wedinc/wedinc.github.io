@@ -1,8 +1,8 @@
 <template>
   <main>
     <ContentList v-slot="{ list }" :query="query">
-      <ul v-for="article in list" :key="article._path">
-        <li>
+      <ul>
+        <li v-for="article in list" :key="article._path" class="mb-8">
           <Card
             :title="article.title"
             :description="article.description"
