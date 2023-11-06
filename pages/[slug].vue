@@ -1,6 +1,6 @@
 <template>
   <main>
-    <article class="prose">
+    <article class="prose max-w-full">
       <ContentRenderer v-if="data" :value="data" />
     </article>
   </main>
