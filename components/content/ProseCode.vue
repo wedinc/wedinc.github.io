@@ -27,10 +27,3 @@
     copy(props.code)
   }
 </script>
-
-<style scoped>
-  code::before,
-  code::after {
-    content: none;
-  }
-</style>
