@@ -6,10 +6,10 @@ date: 2022-06-30
 image: 
 ---
 
-WED株式会社でデータエンジニアをしている[thimi0412](https://twitter.com/thimi0412)です。
+WED株式会社でデータエンジニアをしている[thimi0412](https://twitter.com/thimi0412)です。  
 2023年11月現在弊社はDatastreamによるBigQueryへのデータ転送を行っており、導入に至った経緯やその準備、実際に運用してみての感想を記します。
 
-Datastrema for BigQuery
+Datastrema for BigQuery  
 https://cloud.google.com/datastream-for-bigquery
 
 ## 導入の経緯
@@ -18,30 +18,32 @@ https://cloud.google.com/datastream-for-bigquery
 - **旧BigQueryの転送(Airflow)が保守しづらくなっている**
 - **DBのスキーマ変更に対してBigQuery側のスキーマ変更が追いつかない**
 
-ONEのサービスで使用しているDBがCloudSQLからAlloyDBへの移行するということが決まっており、プロジェクトとしては3ヶ月前から移行の準備をしていました。
-その際、アプリケーションで使用しているDBからBigQueryへの転送を行っているシステムを改修する必要があり、改修のコストも高く保守できる人間が存在していないという問題があり、新規に1から作ろうということになりました。
-そして、DB側のオペレーションでカラムの変更や削除等が行われると、BQ側でも対応しなけれないけないので運用コストも上がっていました。
+ONEのサービスで使用しているDBがCloudSQLからAlloyDBへの移行するということが決まっており、プロジェクトとしては3ヶ月前から移行の準備をしていました。  
+その際、アプリケーションで使用しているDBからBigQueryへの転送を行っているシステムを改修する必要があり、改修のコストも高く保守できる人間が存在していないという問題がありました。  
+そして、DB側のオペレーションでカラムの変更や削除等が行われると、BigQuery側でも対応しなけれないけないので運用コストも上がっていました。
+
+
 
 `Datastream for BigQuery`の採用理由としては以下の点が挙げられます。
 - **フルマネージドなサービスを使用してアプリケーションで使用しているDBからBigQueryにデータを転送したい**
 - **DB側のスキーマが変更されても追従して変更される**
 - **ニアリアルタイムなデータ連携なのですぐにデータを見れる**
 
-Datastreamの仕様については[akabe](https://zenn.dev/akabe)の記事がとても丁寧に説明されています。
+Datastreamの仕様については[akabe](https://zenn.dev/akabe)の記事がとても丁寧に説明されています。  
 https://zenn.dev/openlogi/articles/survey-datastream-for-bigquery#ddl-(data-definition-language) 
 
 ## BigQueryへのデータ転送
 ### 以前までのBigQueryへの転送
-以前はGKE上に作成したAirflow内でEmbulkを実行して前日分のデータをCloudSQLからBigQueryにデータを入れています。
-
+以前はGKE上に作成したAirflow内でEmbulkを実行して前日分のデータをCloudSQLからBigQueryにデータを入れています。  
 すでにこのアーキテクチャを作成した方も在籍しておらず、運用面も辛くなってました。
 
 ![datastream_01.png](<content/datastream-for-bigquery/datastream_01.png>)
 
 差分転送もうまく行えていない状況でしたので扱いづらいという問題もありました。
-理由としては`updated_at`が前日のものをBigQueryの各テーブルにappendしていくものだったので重複するidできてしまい。BigQuery側で`QUALIFY ROW_NUMBER()`等を使用して重複レコードをなくしていました。
+理由としては`updated_at`が前日のものをBigQueryの各テーブルにappendしていくものだったのでIDが重複していました。なのでBigQuery側で`QUALIFY ROW_NUMBER()`等を使用して重複レコードをなくしていました。
 
 以下のようなテーブルで新規にレコードが入るとCloudSQLとBigQueryのテーブルは同じ状態になります。
+
 **CloudSQL**
 | id  | name    | created_at          | updated_at          | 
 | --- | ------- | ------------------- | ------------------- | 
@@ -57,6 +59,7 @@ https://zenn.dev/openlogi/articles/survey-datastream-for-bigquery#ddl-(data-defi
 | 3   | harada  | 2023-11-01 00:00:00 | 2023-11-01 00:00:00 |
 
 しかし`shimiz`→を`shimizu2`に更新して`updated_at`も更新されるとidが重複してまう。
+
 **CloudSQL**
 | id  | name     | created_at          | updated_at          | 
 | --- | -------  | ------------------- | ------------------- | 
@@ -79,6 +82,7 @@ DB側のスキーマ変更の際にBigQuery側のスキーマ変更をしなく�
 ![datastream_02.png](<content/datastream-for-bigquery/datastream_02.png>)
 
 以下のことを勝手にやってくれる
+- データの挿入や更新があったら反映される
 - columnが追加されるとそのcolumnが追加される
 - columnが削除されるとそのcolumnがnullになる
 - columnの名前が変更されるとその以前のcolumnはnullになり、変更後のcolumnが作られる
@@ -103,12 +107,11 @@ https://medium.com/google-cloud/configure-streams-in-datastream-with-predefined-
 
 ### 大量データのバックフィルが辛い
 Datastreamには過去のDBにあるデータを同期する機能が備わっています。新規に追加されるレコードやスキーマの変更イベントはBigQuery側に反映されるのですが過去データもBigQuery上に入れる必要があるのでバックフィルを実行してDBをBigQueryのデータをsyncするような感じです。
+
 https://cloud.google.com/datastream/docs/manage-backfill-for-the-objects-of-a-stream
 
-ONEのサービスが2018年からリリースされこれまでに買い取ってきたレシート数は**9億(2023/11/17現在)を超えています**。となると、レシート情報を格納したテーブルも9億を超えるレコードが存在します。
-
-Datastreamの導入は比較的すぐ行えましたが。レシート情報やそれに関連した9億レコードを超えるテーブルの**バックフィルにおよそ一ヶ月ほどかかりました**。
-
+ONEのサービスが2018年からリリースされこれまでに買い取ってきたレシート数は**9億(2023/11/17現在)を超えています**。となると、レシート情報を格納したテーブルも9億を超えるレコードが存在します。  
+Datastreamの導入は比較的すぐ行えましたが。レシート情報やそれに関連した9億レコードを超えるテーブルの**バックフィルにおよそ一ヶ月ほどかかりました**。  
 Datastream側のバックフィルは順調に進んでいてもデータを受けるBigQuery側でデータが詰まってしまう問題がありました。データの転送の順番も設定できない(2018年から転送 or 直近1年を先に送るなど)ので実際にデータの集計等を行うのに1ヶ月ほどのタイムラグは発生していました。
 
 我々もこの大量データのバックフィルのベターなやり方はまだわかっていないので有識者の方がいれば教えてください。
