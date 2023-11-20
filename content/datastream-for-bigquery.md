@@ -36,7 +36,7 @@ https://zenn.dev/openlogi/articles/survey-datastream-for-bigquery#ddl-(data-defi
 
 すでにこのアーキテクチャを作成した方も在籍しておらず、運用面も辛くなってました。
 
-![datastream_01.png](<content/datastream-for-bigquery/datastream_01.png)
+![datastream_01.png](<content/datastream-for-bigquery/datastream_01.png>)
 
 差分転送もうまく行えていない状況でしたので扱いづらいという問題もありました。
 理由としては`updated_at`が前日のものをBigQueryの各テーブルにappendしていくものだったので重複するidできてしまい。BigQuery側で`QUALIFY ROW_NUMBER()`等を使用して重複レコードをなくしていました。
@@ -76,7 +76,7 @@ https://zenn.dev/openlogi/articles/survey-datastream-for-bigquery#ddl-(data-defi
 Datastream for BigQueryに移行したことにより構成がシンプルになりました。以前と違ってGKEやその上に乗っているAirflowやEmbulkを管理しなくて良くなったことはとても大きいメリットです。
 
 DB側のスキーマ変更の際にBigQuery側のスキーマ変更をしなくて良くなりました。
-![datastream_02.png](<content/datastream-for-bigquery/datastream_02.png)
+![datastream_02.png](<content/datastream-for-bigquery/datastream_02.png>)
 
 以下のことを勝手にやってくれる
 - columnが追加されるとそのcolumnが追加される
