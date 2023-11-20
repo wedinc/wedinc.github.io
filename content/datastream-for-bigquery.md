@@ -1,9 +1,9 @@
 ---
 title: "Datastream for BigQueryを本格導入した話"
-emoji: "🤖"
-type: "tech"
-topics: []
-published: false
+author: Yoshihiro Harada
+tags: Data, BigQuery, Datastream
+date: 2022-06-30
+image: 
 ---
 
 WED株式会社でデータエンジニアをしている[thimi0412](https://twitter.com/thimi0412)です。
