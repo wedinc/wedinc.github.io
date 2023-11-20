@@ -58,7 +58,7 @@ https://zenn.dev/openlogi/articles/survey-datastream-for-bigquery#ddl-(data-defi
 | 2   | yasuda  | 2023-11-01 00:00:00 | 2023-11-01 00:00:00 | 
 | 3   | harada  | 2023-11-01 00:00:00 | 2023-11-01 00:00:00 |
 
-しかし`shimiz`→を`shimizu2`に更新して`updated_at`も更新されるとidが重複してまう。
+しかし`shimizu`→を`shimizu2`に更新して`updated_at`も更新されるとidが重複してまう。
 
 **CloudSQL**
 | id  | name     | created_at          | updated_at          | 
