@@ -24,7 +24,7 @@ Executorは、JupyterLab で利用しているリソースとは別に使用す�
 [公式ドキュメント](https://cloud.google.com/vertex-ai/docs/workbench/managed/executor?hl=ja#explicit-project-selection)にも書いてありますが、
 BigQuery上のテーブルにNotebookでアクセスするとき、ふだんは何も指定せず：
 
-```
+```python
 from google.cloud import bigquery
 client = bigquery.Client()
 ```
@@ -43,18 +43,18 @@ JupyterLabでは`from_pretrained("stored_path")`だけでそのモデルを読�
 Executorでは、そのままだと暗黙にHuggingface.coのアドレスを追加して読み込みに行って失敗します。
 
 これを防ぐためには、例えば以下のように`local_files_only`のフラグを追加する必要があります：
-```
+```python
 from transformers import BertForSequenceClassification
 model = BertForSequenceClassification.from_pretrained(your_model_path, local_files_only=True)
 ```
 
 3. 生成したファイルを保持したいときは別途GCSに保存する
 
-ExecutorでNotebookを実行すると、Notebook自体は Google Cloud Storageの対象バケットに保存されて、そこで実行されるが、実行時に生成されたファイルはそのバケットに保存されません。
 そのため、生成したファイルを後で利用したい場合には明示的にGCS上のバケットを指定して、保存してやる必要があります。
+ExecutorでNotebookを実行すると、Notebook自体は Google Cloud Storageの対象バケットに保存されて、そこで実行されるが、実行時に生成されたファイルはそのバケットに保存されません。
 方法の一つとしては、upload_from_filename()を使うことで、例えば:
 
-```
+```python
 from google.cloud import storage
 
 local_path = "file_path_of_your_data_or_model"
@@ -69,7 +69,7 @@ blob.upload_from_filename(local_path)
 のようにして保存できます。
 
 利用したいときは、download_to_filename()を使って：
-```
+```python
 blob = bucket.blob(gcs_path)
 blob.download_to_filename(local_path)
 ```
@@ -91,7 +91,7 @@ UNIXで mount コマンドを利用していた人にはイメージが湧きや
 !gcsfuse your_bucket_name your_mount_point
 ```
 として先に実行するようにしておけば、あとは例えば
-```
+```python
 your_dataframe.to_pickle("your_mount_point/your_folder/your_output_file")
 ```
 などとしてファイルをGCS上のバケットに保存していくことができます。
