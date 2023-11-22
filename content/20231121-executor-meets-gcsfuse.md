@@ -55,7 +55,7 @@ ExecutorでNotebookを実行すると、Notebook自体は Google Cloud Storage�
 Notebook上の実行結果はそこから確認できるのですが、実行時に生成されたモデルなどのファイルはそのバケットには保存されません。
 そのため、生成したファイルを後で利用したい場合には、明示的にGCS上のバケットを指定して保存してやる必要があります。
 
-方法の一つとしては、`upload_from_filename()`を使うことで、例えば：
+方法の一つとしては、`upload_from_filename()`を使うことで、例えば
 
 ```python
 from google.cloud import storage
@@ -82,7 +82,7 @@ blob.download_to_filename(local_path)
 ただ、複数ファイルを生成・利用する際に毎度ローカルとGCSの間でファイルをコピーするのもちょっと面倒です。
 そこで gcsfuse を使って、bucketをマウントすると便利です。
 [gcsfuse](https://cloud.google.com/storage/docs/gcsfuse-mount?hl=ja)は、[Cloud Storage FUSE](https://cloud.google.com/storage/docs/gcs-fuse?hl=ja)を使ってバケットをローカルファイルシステムにマウントするものです。
-UNIXで mount コマンドを利用していた人にはイメージが湧きやすいでしょう。
+UNIXで mount コマンドを利用したことがある人にはイメージが湧きやすいでしょう。
 
 [Cloud Storage FUSEをインストールする](https://cloud.google.com/storage/docs/gcsfuse-install?hl=ja)と、gcsfuseというコマンドが利用できます。
 [リクエストの認証](https://cloud.google.com/storage/docs/gcsfuse-mount?hl=ja#authenticate_requests)は利用環境に依存しますが、弊社の環境では利用しているサービスアカウントに読み書きを許可するロール(roles/storage.objectAdmin)を付与することで実行できました ([バケットレベルのポリシーにプリンシパルを追加する](https://cloud.google.com/storage/docs/access-control/using-iam-permissions?hl=ja%E3%80%82#bucket-add))。
