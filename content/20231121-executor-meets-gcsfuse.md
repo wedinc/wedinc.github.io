@@ -85,7 +85,7 @@ blob.download_to_filename(local_path)
 UNIXで mount コマンドを利用していた人にはイメージが湧きやすいでしょう。
 
 [Cloud Storage FUSEをインストールする](https://cloud.google.com/storage/docs/gcsfuse-install?hl=ja)と、gcsfuseというコマンドが利用できます。
-[リクエストの認証](https://cloud.google.com/storage/docs/gcsfuse-mount?hl=ja#authenticate_requests)は利用環境に依存しますが、弊社の環境では利用しているサービスアカウントにロール(roles/storage.objectAdmin)を付与することで実行できました ([バケットレベルのポリシーにプリンシパルを追加する](https://cloud.google.com/storage/docs/access-control/using-iam-permissions?hl=ja%E3%80%82#bucket-add)。
+[リクエストの認証](https://cloud.google.com/storage/docs/gcsfuse-mount?hl=ja#authenticate_requests)は利用環境に依存しますが、弊社の環境では利用しているサービスアカウントにロール(roles/storage.objectAdmin)を付与することで実行できました ([バケットレベルのポリシーにプリンシパルを追加する](https://cloud.google.com/storage/docs/access-control/using-iam-permissions?hl=ja%E3%80%82#bucket-add))。
 認証を与えることができれば、gcsfuseの利用方法は簡単で、マウントポイントとなるディレクトリを作っておいて、そこに対象bucketをマウントするよう指定します。
 これをNotebookのセル上に
 ```
