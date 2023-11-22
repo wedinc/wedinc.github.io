@@ -28,15 +28,16 @@ BigQuery上のテーブルにNotebookでアクセスするとき、ふだんは�
 from google.cloud import bigquery
 client = bigquery.Client()
 ```
-でいいのですが、いずれexecutorで実行したいと考えているときは、Executorは暗黙にprojectを取得できないので、明示的に指定しておく必要があります。
+でいいのですが、Executorは暗黙にprojectを取得できないので、明示的に指定しておく必要があります。
 ```
 project_id = "your-own-project-name"
 client = bigquery.Client(project=project_id)
 ```
-後者の書き方でもJupyterLab上では問題ないので、普段からこのように書いておくとよいかもしれません。
+後者の書き方でもJupyterLab上では問題ないので、いずれExecutorで実行したいと考えているときは、普段からこのように書いておくとよいかもしれません。
 
 
 2. モデルをローカルから読み込むように明示する
+
 学習済みモデルをHuggingfaceからロードして、ローカルでトレーニングを追加して保存した後それを呼び出すとき、
 JupyterLabでは`from_pretrained("[stored_path]")`だけでそのモデルを読み込めますが、
 Executorでは、そのままだと暗黙にHuggingface.coのアドレスを追加して読み込みに行って失敗します。
@@ -48,6 +49,7 @@ model = BertForSequenceClassification.from_pretrained(your_model_path, local_fil
 ```
 
 3. 生成したファイルを保持したいときは別途GCSに保存する
+
 ExecutorでNotebookを実行すると、Notebook自体は Google Cloud Storageの対象バケットに保存されて、そこで実行されるが、実行時に生成されたファイルはそのバケットに保存されません。
 そのため、生成したファイルを後で利用したい場合には明示的にGCS上のバケットを指定して、保存してやる必要があります。
 方法の一つとしては、upload_from_filename()を使うことで、例えば:
