@@ -54,7 +54,7 @@ model = BertForSequenceClassification.from_pretrained(your_model_path, local_fil
 
 ExecutorでNotebookを実行すると、Notebook自体は Google Cloud Storageの対象バケットに保存されて、そこで実行されます。Notebook上にのる実行結果はそこから確認できるのですが、実行時に生成されたモデルなどのファイルはそのバケットには保存されません。
 そのため、生成したファイルを後で利用したい場合には、明示的にGCS上のバケットを指定して保存してやる必要があります。
-方法の一つとしては、`upload_from_filename()`を使うことで、例えば:
+方法の一つとしては、`upload_from_filename()`を使うことで、例えば：
 
 ```python
 from google.cloud import storage
@@ -70,12 +70,12 @@ blob.upload_from_filename(local_path)
 ```
 のようにして保存できます。
 
-利用したいときは、`download_to_filename()`を使って：
+利用したいときは、`download_to_filename()`を使って
 ```python
 blob = bucket.blob(gcs_path)
 blob.download_to_filename(local_path)
 ```
-ローカルにコピーできます。
+のようにしてローカルにコピーできます。
 
 ## gcsfuse
 
@@ -85,9 +85,9 @@ blob.download_to_filename(local_path)
 UNIXで mount コマンドを利用していた人にはイメージが湧きやすいでしょう。
 
 [Cloud Storage FUSEをインストールする](https://cloud.google.com/storage/docs/gcsfuse-install?hl=ja)と、gcsfuseというコマンドが利用できます。
-[リクエストの認証](https://cloud.google.com/storage/docs/gcsfuse-mount?hl=ja#authenticate_requests)は利用環境に依存しますが、弊社の環境では利用しているサービスアカウントにロール(roles/storage.objectAdmin)を付与することで実行できました([バケットレベルのポリシーにプリンシパルを追加する](https://cloud.google.com/storage/docs/access-control/using-iam-permissions?hl=ja)%E3%80%82#bucket-add)。
+[リクエストの認証](https://cloud.google.com/storage/docs/gcsfuse-mount?hl=ja#authenticate_requests)は利用環境に依存しますが、弊社の環境では利用しているサービスアカウントにロール(roles/storage.objectAdmin)を付与することで実行できました ([バケットレベルのポリシーにプリンシパルを追加する](https://cloud.google.com/storage/docs/access-control/using-iam-permissions?hl=ja%E3%80%82#bucket-add)。
 認証を与えることができれば、gcsfuseの利用方法は簡単で、マウントポイントとなるディレクトリを作っておいて、そこに対象bucketをマウントするよう指定します。
-これをNotebookのcell上に
+これをNotebookのセル上に
 ```
 !mkdir -p your_mount_point
 !gcsfuse your_bucket_name your_mount_point
@@ -97,7 +97,7 @@ UNIXで mount コマンドを利用していた人にはイメージが湧きや
 your_dataframe.to_pickle("your_mount_point/your_folder/your_output_file")
 ```
 などとしてファイルをGCS上のバケットに保存していくことができます。
-JupyterLab上でも同様にbucketをマウントするだけでExecutorで生成したファイルを利用できます。
+Executorでのジョブが終了した後は、JupyterLab上でも同様にbucketをマウントすればExecutorで生成したファイルを利用できます。
 
 ## 終わりに
 
