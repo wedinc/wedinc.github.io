@@ -17,7 +17,7 @@ WED株式会社でデータエンジニアをしているcatabon55です。
 
 Executorは、JupyterLab で利用しているリソースとは別に使用するCPUやGPU数、メモリ量を指定できて、実行をスケジューリングすることもでき便利です。
 
-![executor-resource-list.png](<content/20231121-executor-meets-gcsfuse/executor_resource_list.png>)
+![executor_resource_list.png](<content/20231121-executor-meets-gcsfuse/executor_resource_list.png>)
 
 実行もほぼJupyterLab上のNotebookをそのまま利用できるのですが、注意点がいくつかあります。
 
