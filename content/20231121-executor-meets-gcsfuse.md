@@ -2,7 +2,7 @@
 title: Vertex AI Workbench で Executorをgcsfuseとともに使う
 author: catabon55
 tags: Vertex AI, Google Cloud Storage, gcsfuse
-date: 2023-11-22
+date: 2023-11-21
 ---
 
 ## はじめに
