@@ -39,10 +39,10 @@ client = bigquery.Client(project=project_id)
 2. モデルをローカルから読み込むように明示する
 
 学習済みモデルをHuggingfaceからロードして、ローカルでトレーニングを追加して保存した後それを呼び出すとき、
-JupyterLabでは`from_pretrained("[stored_path]")`だけでそのモデルを読み込めますが、
+JupyterLabでは`from_pretrained("stored_path")`だけでそのモデルを読み込めますが、
 Executorでは、そのままだと暗黙にHuggingface.coのアドレスを追加して読み込みに行って失敗します。
 
-これを防ぐためには、例えば以下のようにlocal_files_onlyのフラグを追加する必要があります：
+これを防ぐためには、例えば以下のように`local_files_only`のフラグを追加する必要があります：
 ```
 from transformers import BertForSequenceClassification
 model = BertForSequenceClassification.from_pretrained(your_model_path, local_files_only=True)
@@ -83,7 +83,7 @@ blob.download_to_filename(local_path)
 UNIXで mount コマンドを利用していた人にはイメージが湧きやすいでしょう。
 
 [Cloud Storage FUSEをインストールする](https://cloud.google.com/storage/docs/gcsfuse-install?hl=ja)と、gcsfuseというコマンドが利用できます。
-[リクエストの認証](https://cloud.google.com/storage/docs/gcsfuse-mount?hl=ja#authenticate_requests)は利用環境に依存しますが、弊社の環境では利用しているサービスアカウントにロール(roles/storage.objectAdmin)を付与することで実行できました(https://cloud.google.com/storage/docs/access-control/using-iam-permissions?hl=ja)。
+[リクエストの認証](https://cloud.google.com/storage/docs/gcsfuse-mount?hl=ja#authenticate_requests)は利用環境に依存しますが、弊社の環境では利用しているサービスアカウントにロール(roles/storage.objectAdmin)を付与することで実行できました([バケットレベルのポリシーにプリンシパルを追加する](https://cloud.google.com/storage/docs/access-control/using-iam-permissions?hl=ja)%E3%80%82#bucket-add)。
 認証を与えることができれば、gcsfuseの利用方法は簡単で、マウントポイントとなるディレクトリを作っておいて、そこに対象bucketをマウントするよう指定します。
 これをNotebookのcell上に
 ```
@@ -100,6 +100,6 @@ JupyterLab上でも同様にbucketをマウントするだけでExecutorで生�
 ## 終わりに
 
 はじめてUNIXのNFS mountを知ったときには、ローカルのマシンからネットワーク越しのファイルアクセスが簡単にできることに感動した記憶があります。gcsfuseはその記憶を呼び起こしてくれました。
-マシン環境はいろいろ変化・進歩してきましたが、考えてみれば昔も今も端末からサーバマシンに接続して、重いプロセスを走らせて、コーヒーなど飲みながら実行を待って、エラーが出たらログを、正常終了したら生成ファイルをチェック、というサイクルを繰り返してきた気がします。Executorでジョブを実行させながら、そんなことを思いました。
+マシン環境はいろいろ進歩してきましたが、一歩引いてみれば昔も今もやっていることはあまり変わらなくて、端末からサーバマシンに接続して、重いプロセスを走らせて、コーヒーなど飲みながら実行を待って、エラーが出たらログを、正常終了したら結果や生成されたファイルをチェック、というサイクルを繰り返してきた気がします。Executorでジョブを実行させながら、そんなことを思いました。
 
 
