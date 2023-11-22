@@ -6,7 +6,7 @@ date: 2023-11-21
 ---
 
 ## はじめに
-WED株式会社でデータエンジニアをしているcatabon55です。
+WED株式会社でデータエンジニアをしている catabon55 です。
 
 仕事では主にVertex AIのWorkbenchを用いて作業をしています。JupyterLab Notebookで作業できて割と快適です。
 普段はNotebook上で小さめのデータで対話的にあれこれ試して、いけそうとなったら大規模なデータに対して[Executor](https://cloud.google.com/vertex-ai/docs/workbench/managed/executor?hl=ja)を使ってNotebookを別プロセスで実行しています。
@@ -39,8 +39,8 @@ client = bigquery.Client(project=project_id)
 
 2. モデルをローカルから読み込むように明示する
 
-学習済みモデルをHuggingfaceからロードして、ローカルでトレーニングを追加して保存した後それを呼び出すとき、
-JupyterLabでは`from_pretrained("stored_path")`だけでそのモデルを読み込めますが、
+例えば学習済みモデルをHuggingfaceからロードして、ローカルでトレーニングを追加して保存した後でそれを呼び出すとき、
+JupyterLab上では`from_pretrained("your_model_path")`だけでそのモデルを読み込めますが、
 Executorでは、そのままだと暗黙にHuggingface.coのアドレスを追加して読み込みに行って失敗します。
 
 これを防ぐためには、例えば以下のように`local_files_only`のフラグを追加しておけば大丈夫です：
@@ -85,9 +85,9 @@ blob.download_to_filename(local_path)
 UNIXで mount コマンドを利用していた人にはイメージが湧きやすいでしょう。
 
 [Cloud Storage FUSEをインストールする](https://cloud.google.com/storage/docs/gcsfuse-install?hl=ja)と、gcsfuseというコマンドが利用できます。
-[リクエストの認証](https://cloud.google.com/storage/docs/gcsfuse-mount?hl=ja#authenticate_requests)は利用環境に依存しますが、弊社の環境では利用しているサービスアカウントにロール(roles/storage.objectAdmin)を付与することで実行できました ([バケットレベルのポリシーにプリンシパルを追加する](https://cloud.google.com/storage/docs/access-control/using-iam-permissions?hl=ja%E3%80%82#bucket-add))。
-認証を与えることができれば、gcsfuseの利用方法は簡単で、マウントポイントとなるディレクトリを作っておいて、そこに対象bucketをマウントするよう指定します。
-これをNotebookのセル上に
+[リクエストの認証](https://cloud.google.com/storage/docs/gcsfuse-mount?hl=ja#authenticate_requests)は利用環境に依存しますが、弊社の環境では利用しているサービスアカウントに読み書きを許可するロール(roles/storage.objectAdmin)を付与することで実行できました ([バケットレベルのポリシーにプリンシパルを追加する](https://cloud.google.com/storage/docs/access-control/using-iam-permissions?hl=ja%E3%80%82#bucket-add))。
+認証を与えることができれば、gcsfuseの利用方法は簡単で、マウントポイントとなるディレクトリを作って、そこに対象bucketをマウントするよう指定すればOKです。
+Executorで実行するときも、この処理をNotebookのセル上に
 ```
 !mkdir -p your_mount_point
 !gcsfuse your_bucket_name your_mount_point
