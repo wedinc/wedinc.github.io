@@ -1,8 +1,8 @@
 ---
 title: "Datastream for BigQueryを本格導入した話"
-author: Yoshihiro Harada
+author: Kosuke Shimizu
 tags: Data, BigQuery, Datastream
-date: 2022-06-30
+date: 2023-11-22
 image: 
 ---
 
