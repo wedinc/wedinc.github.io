@@ -10,7 +10,7 @@ WED株式会社でデータエンジニアをしているcatabon55です。
 
 仕事では主にVertex AIのWorkbenchを用いて作業をしています。JupyterLab Notebookで作業できて割と快適です。
 
-Notebook上で小さめのデータで対話的にあれこれ試して、いけそうとなったら大規模なデータに対して[https://cloud.google.com/vertex-ai/docs/workbench/managed/executor?hl=ja](Executor)という機能を使ってNotebookを別プロセスで実行しています。
+Notebook上で小さめのデータで対話的にあれこれ試して、いけそうとなったら大規模なデータに対して[Executor](https://cloud.google.com/vertex-ai/docs/workbench/managed/executor?hl=ja)という機能を使ってNotebookを別プロセスで実行しています。
 
 
 ## Executor on Vertex AI Workbench
@@ -21,7 +21,7 @@ Executorは、JupyterLab で利用しているリソースとは別に使用す�
 
 1. project_idを明示的に指定する
 
-[  https://cloud.google.com/vertex-ai/docs/workbench/managed/executor?hl=ja#explicit-project-selection](公式ドキュメント)にも書いてありますが、
+[公式ドキュメント](https://cloud.google.com/vertex-ai/docs/workbench/managed/executor?hl=ja#explicit-project-selection)にも書いてありますが、
 BigQuery上のテーブルにNotebookでアクセスするとき、ふだんは何も指定せず：
 
 ```
@@ -79,18 +79,18 @@ blob.download_to_filename(local_path)
 
 ただ、複数ファイルを生成・利用する際に毎度ローカルとGCSの間でファイルをコピーするのもちょっと面倒です。
 そこで gcsfuse を使って、bucketをマウントすると便利です。
-[https://cloud.google.com/storage/docs/gcsfuse-mount?hl=ja](gcsfuse)は、[https://cloud.google.com/storage/docs/gcs-fuse?hl=ja](Cloud Storage FUSE)を使ってバケットをローカルファイルシステムにマウントするものです。
+[gcsfuse](https://cloud.google.com/storage/docs/gcsfuse-mount?hl=ja)は、[Cloud Storage FUSE](https://cloud.google.com/storage/docs/gcs-fuse?hl=ja)を使ってバケットをローカルファイルシステムにマウントするものです。
 UNIXで mount コマンドを利用していた人にはイメージが湧きやすいでしょう。
 
-[https://cloud.google.com/storage/docs/gcsfuse-install?hl=ja](Cloud Storage FUSEをインストールする)と、gcsfuseというコマンドが利用できます。
-[https://cloud.google.com/storage/docs/gcsfuse-mount?hl=ja#authenticate_requests](リクエストの認証)は利用環境に依存しますが、弊社の環境では利用しているサービスアカウントにロール(roles/storage.objectAdmin)を付与することで実行できました(https://cloud.google.com/storage/docs/access-control/using-iam-permissions?hl=ja)。
+[Cloud Storage FUSEをインストールする](https://cloud.google.com/storage/docs/gcsfuse-install?hl=ja)と、gcsfuseというコマンドが利用できます。
+[リクエストの認証](https://cloud.google.com/storage/docs/gcsfuse-mount?hl=ja#authenticate_requests)は利用環境に依存しますが、弊社の環境では利用しているサービスアカウントにロール(roles/storage.objectAdmin)を付与することで実行できました(https://cloud.google.com/storage/docs/access-control/using-iam-permissions?hl=ja)。
 認証を与えることができれば、gcsfuseの利用方法は簡単で、マウントポイントとなるディレクトリを作っておいて、そこに対象bucketをマウントするよう指定します。
 これをNotebookのcell上に
 ```
 !mkdir -p your_mount_point
 !gcsfuse your_bucket_name your_mount_point
 ```
-として実行するようにしておけば、あとは例えば
+として先に実行するようにしておけば、あとは例えば
 ```
 your_dataframe.to_pickle("your_mount_point/your_folder/your_output_file")
 ```
