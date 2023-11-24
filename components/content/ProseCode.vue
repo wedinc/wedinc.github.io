@@ -1,12 +1,12 @@
 <template>
-  <div class="prose-code relative">
+  <code class="prose-code relative">
     <slot />
     <img
       src="@/assets/images/copy.svg"
       class="copy-btn absolute w-7 top-2 right-2 bg-gray-600 hover:bg-gray-500 rounded-xl p-0.5 box-content transition-colors cursor-pointer m-0"
       @click="onClick"
     />
-  </div>
+  </code>
 </template>
 
 <script setup lang="ts">
