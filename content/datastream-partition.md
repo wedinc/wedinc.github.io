@@ -1,8 +1,8 @@
 ---
-title: ""
+title: "Datastreamで作成されたテーブルをパーティション化するスクリプトを作った"
 author: Ryuya Matsunawa
 tags: Data, BigQuery, Datastream
-date: 2023-11-22
+date: 2023-11-27
 image:
 ---
 
