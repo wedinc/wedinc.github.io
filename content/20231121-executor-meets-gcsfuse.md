@@ -8,7 +8,7 @@ date: 2023-11-21
 ## はじめに
 WED株式会社でデータエンジニアをしている catabon55 です。
 
-仕事では主にVertex AIのWorkbenchを用いて作業をしています。JupyterLab Notebookで作業できて割と快適です。
+仕事では主にVertex AIのWorkbenchを用いて作業をしています。JupyterLab Notebookで作業できて割と快適です。  
 普段はNotebook上で小さめのデータで対話的にあれこれ試して、いけそうとなったら大規模なデータに対して[Executor](https://cloud.google.com/vertex-ai/docs/workbench/managed/executor?hl=ja)を使ってNotebookを別プロセスで実行しています。
 
 
