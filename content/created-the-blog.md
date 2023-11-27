@@ -24,7 +24,7 @@ Nuxt でなら、サクッと作る自信があったので、作ってみまし
   - [Nuxt Tailwind](https://tailwindcss.nuxtjs.org/)
 - CMS
   - [Nuxt Content](https://content.nuxt.com/)
-- Deploy
+- Hosting
   - [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages)
 - CI/CD
   - [GitHub Actions](https://github.com/features/actions)
@@ -48,8 +48,10 @@ Markdown で記事を書くことができるので、記事を書くのがと�
 npx nuxi@latest init wedinc.github.io
 ```
 
-GitHub Pages のことあんまりよくわかってないんですが、  
-{organization}.github.io というリポジトリ名にしないといけないっぽかったので、そうしました。
+[Quickstart for GitHub Pages](https://docs.github.com/en/pages/quickstart) を見ると、  
+> Enter username.github.io as the repository name. Replace username with your GitHub username. For example, if your username is octocat, the repository name should be octocat.github.io.
+
+とあるので、 Project Name もとい、Repository Name は `wedinc.github.io` とします。
 
 ### 設定
 
@@ -158,11 +160,9 @@ Nuxt の useHead と同じような感じです。
 **とっても素敵ですね**
 
 ### GitHub Pages へのデプロイ
-正直、公式のドキュメントに従って、ぽちぽちやってただけなので覚えてません。
+公式のドキュメント通りにやればできるのでとても簡単です。
 
 https://github.com/wedinc/wedinc.github.io/blob/main/.github/workflows/deploy.yml
-
-これを見れば、何をやっているかわかると思います。
 
 ## 終わりに
 
