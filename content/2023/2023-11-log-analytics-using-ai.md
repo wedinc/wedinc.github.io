@@ -37,7 +37,3 @@ KARTE では、まず運営側で、基本的なユーザーの行動をプロ�
 # 感想
 
 ONE でもユーザーからレシートを買い取っており、一連の購買情報から Content を作成し、そこから行動解析にもつなげられそうだなあ、と思いました。
-
----
-
-Look at the [Content documentation](https://content.nuxtjs.org/) to learn more.
