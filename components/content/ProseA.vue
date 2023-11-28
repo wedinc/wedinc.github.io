@@ -1,12 +1,10 @@
 <template>
-  <NuxtLink :href="href" :target="target" class="flex">
+  <NuxtLink :href="href" :target="target">
     <slot />
-    <div>
-      <img
-        src="@/assets/images/link.svg"
-        class="w-3 m-0 ml-1 mb-1.5 inline align-bottom"
-      />
-    </div>
+    <img
+      src="@/assets/images/link.svg"
+      class="w-3 m-0 ml-1 mb-1.5 inline align-bottom"
+    />
   </NuxtLink>
 </template>
 
