@@ -34,7 +34,7 @@ export default defineNuxtConfig({
   },
   dayjs: {
     locales: ['ja'],
-    plugins: ['LocalizedFormat'],
+    plugins: ['localizedFormat'],
     defaultLocale: 'ja',
   }
 })
