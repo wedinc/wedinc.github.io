@@ -18,7 +18,7 @@
         {{ props.description }}
       </p>
       <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-        {{ props.date }}
+        <time :datetime="$dayjs(props.date).format('YYYY-MM-DD')">{{ $dayjs(props.date).format('LL') }}</time>
       </p>
       <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
         {{ props.author }}

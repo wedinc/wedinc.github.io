@@ -19,7 +19,8 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxtjs/tailwindcss',
     '@vueuse/nuxt',
-    'nuxt-gtag'
+    'nuxt-gtag',
+    'dayjs-nuxt'
   ],
   content: {
     documentDriven: true,
@@ -30,5 +31,10 @@ export default defineNuxtConfig({
   },
   gtag: {
     id: 'G-8E7TW1CHNY'
+  },
+  dayjs: {
+    locales: ['ja'],
+    plugins: ['LocalizedFormat'],
+    defaultLocale: 'ja',
   }
 })
