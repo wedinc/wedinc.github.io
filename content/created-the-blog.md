@@ -185,7 +185,6 @@ Nuxt の useHead と同じような感じです。
 
 ### GitHub Pages へのデプロイ
 公式のドキュメント通りにやればできるのでとても簡単です。
-
 https://github.com/wedinc/wedinc.github.io/blob/main/.github/workflows/deploy.yml
 
 ## 終わりに
