@@ -8,7 +8,7 @@
 
 <script setup lang="ts">
   const route = useRoute()
-  const { data } = await useAsyncData('get-document', () =>
+  const { data } = await useAsyncData(`get-document-${route.path}`, () =>
     queryContent(route.path).findOne()
   )
 
