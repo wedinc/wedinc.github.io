@@ -178,7 +178,7 @@ useContentHead は Nuxt Content の API で、
 Markdown File から受け取った情報をもとに、 `<head>` タグの中身を設定することができます。  
 Nuxt の useHead と同じような感じです。
 
-![blank-page](<content/created-the-blog/blank-page.png>)
+![blank-page](</content/created-the-blog/blank-page.png>)
 
 こんな感じになりました。
 **とっても素敵ですね**
