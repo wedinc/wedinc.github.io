@@ -1,11 +1,9 @@
 <template>
-  <code
-    class="text-sm sm:text-base inline-flex text-left items-center space-x-4 bg-gray-900 text-white rounded-lg p-4 pl-6 relative w-full"
-  >
+  <code class="prose-code relative">
     <slot />
     <img
       src="@/assets/images/copy.svg"
-      class="absolute w-7 top-2 right-2 bg-gray-600 hover:bg-gray-500 rounded-xl p-1 box-content transition-colors cursor-pointer"
+      class="copy-btn absolute w-7 top-2 right-2 bg-gray-600 hover:bg-gray-500 rounded-xl p-0.5 box-content transition-colors cursor-pointer m-0"
       @click="onClick"
     />
   </code>
@@ -24,6 +22,6 @@
   const { copy } = useClipboard()
 
   const onClick = () => {
-    copy(props.code)
+    copy(props.code.slice(0, -1))
   }
 </script>
