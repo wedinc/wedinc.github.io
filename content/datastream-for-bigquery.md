@@ -9,7 +9,7 @@ image:
 WED株式会社でデータエンジニアをしている[thimi0412](https://twitter.com/thimi0412)です。  
 2023年11月現在弊社はDatastreamによるBigQueryへのデータ転送を行っており、導入に至った経緯やその準備、実際に運用してみての感想を記します。
 
-Datastrema for BigQuery  
+Datastream for BigQuery  
 https://cloud.google.com/datastream-for-bigquery
 
 ## 導入の経緯
