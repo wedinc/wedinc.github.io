@@ -113,7 +113,7 @@ FYI.
 
 なお、余談ですがこの取り組みは「何やら dahhara がメンバーを部屋に閉じ込めて作業させているらしい」と社内としても目立つ取り組みだった(それはそう)ので、心配したプロジェクト外の人が差し入れに来てくれたりもしました。その節はありがとうございました。
 
-![work-scene.jpg](content/db-migration-project-management/work-scene.jpg)
+![work-scene.jpg](<content/db-migration-project-management/work-scene.jpg>)
 
 ### 徹底的な Issues と議事録の管理
 
@@ -136,11 +136,11 @@ FYI.
 
 ### Issue 管理の一部
 
-![issues.png](content/db-migration-project-management/issues.png)
+![issues.png](<content/db-migration-project-management/issues.png>)
 
 ### 当時の議事録の例
 
-![meeting-note.png](content/db-migration-project-management/meeting-note.png)
+![meeting-note.png](<content/db-migration-project-management/meeting-note.png>)
 
 ### 必要な人を都度アサインする
 
@@ -157,7 +157,7 @@ FYI.
 
 リソースを必要最低限にするための取り組みでしたが、「とりあえずアサインする」のをやめてそれぞれのメンバーに期待する役割をお願いした結果、チームの議論の質はかなり高まったなというふりかえりはあります。
 
-![next-member.png](content/db-migration-project-management/next-member.png)
+![next-member.png](<content/db-migration-project-management/next-member.png>)
 
 ## まとめ
 
