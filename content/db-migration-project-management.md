@@ -6,7 +6,7 @@ date: 2023-12-26
 image:
 ---
 
-WED株式会社で Android/iOSエンジニア兼エンジニアリングマネージャーをしている[dahhara](https://twitter.com/dahhara)です。
+WED株式会社で Android/iOSエンジニア兼エンジニアリングマネージャーをしている[dahhara](https://twitter.com/kuma_moooon)です。
 
 開発領域としてはアプリ開発がメインですが、今回は色々あって **2ヶ月** で ONE の DB 移行及びデータ分析基盤のリプレイスのディレクションをすることになりました。
 
