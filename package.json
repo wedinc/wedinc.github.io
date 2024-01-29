@@ -24,5 +24,8 @@
     "nuxt-gtag": "^1.1.1",
     "prettier": "^3.0.3",
     "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "sitemap": "^7.1.1"
   }
 }

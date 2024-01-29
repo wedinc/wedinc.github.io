@@ -36,5 +36,10 @@ export default defineNuxtConfig({
     locales: ['ja'],
     plugins: ['localizedFormat'],
     defaultLocale: 'ja',
+  },
+  nitro: {
+    prerender: {
+      routes: ['/sitemap.xml']
+    }
   }
 })
