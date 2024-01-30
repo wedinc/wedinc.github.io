@@ -12,4 +12,12 @@
     ogImage: 'wed-logo.png',
     twitterCard: 'summary_large_image'
   })
+  useHead({
+    meta: [
+      {
+        name: 'google-site-verification',
+        content: process.env.GOOGLE_SITE_VERIFICATION
+      }
+    ]
+  })
 </script>
