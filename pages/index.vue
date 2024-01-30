@@ -19,5 +19,8 @@
 
 <script setup lang="ts">
   import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
-  const query: QueryBuilderParams = { sort: [{ date: -1 }] }
+  const query: QueryBuilderParams = {
+    sort: [{ date: -1 }],
+    where: { _path: { $ne: '/' } }
+  }
 </script>
