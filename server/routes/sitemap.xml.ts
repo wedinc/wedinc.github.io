@@ -9,8 +9,9 @@ export default defineEventHandler(async (event) => {
   })
 
   for (const doc of docs) {
+    if (!doc._path) continue
     sitemap.write({
-      url: doc._path,
+      url: doc._path.replace(/\/?$/, '/'),
       changefreq: 'monthly'
     })
   }
