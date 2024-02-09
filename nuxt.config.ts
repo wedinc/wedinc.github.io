@@ -11,7 +11,10 @@ export default defineNuxtConfig({
           type: 'image/x-icon',
           href: '/favicon.ico'
         }
-      ]
+      ],
+      htmlAttrs: {
+        lang: 'ja'
+      }
     }
   },
   devtools: { enabled: true },
