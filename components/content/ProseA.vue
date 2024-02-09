@@ -3,6 +3,7 @@
     <slot />
     <img
       src="@/assets/images/link.svg"
+      alt="External link icon"
       class="w-3 m-0 ml-1 mb-1.5 inline align-bottom"
     />
   </NuxtLink>
