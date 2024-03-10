@@ -17,50 +17,66 @@ WED株式会社でエンジニアをしています篠崎です。
 ## 結論
 **大きい画像から小さい画像に縮小する際は、サイズの段階を踏んで縮小するとジャギりにくい。**
 
-```js
-export const generateMultiResolutionImages = async (
+```ts
+const generateMultiResolutionImages = async (
   originalFile: File,
   originalWidth: number,
   originalHeight: number,
   fileName: string,
 ) => {
-  // 画像のリサイズは縮小になるので、元の画像サイズの名前@3xの画像になる
-  try {
-    // @2xサイズ
-    const twoThirdsScaleImage = await resizeImage(
-      originalFile,
-      fileName + '@2x',
-      originalWidth * (2 / 3),
-      originalHeight * (2 / 3),
-    )
-    if (!twoThirdsScaleImage) throw new Error('@2xサイズの画像の生成に失敗しました')
-
-    // 通常のサイズ
-    // 綺麗に段階的に縮小するために@2xサイズを使用する
-    const oneThirdScaleImage = await resizeImage(
-      twoThirdsScaleImage,
-      fileName,
-      originalWidth / 3,
-      originalHeight / 3,
-    )
-    if (!oneThirdScaleImage) throw new Error('オリジナルサイズの画像の生成に失敗しました')
-
-    // ファイル名を変更するためにFileオブジェクトを作成
-    const renamedOriginalFile = new File(
-      [originalFile],
-      `${fileName + '@3x'}.${originalFile.name.split('.').pop()}`,
-      {
-        type: originalFile.type,
-        lastModified: new Date().getTime(),
-      },
-    )
-
-    return [renamedOriginalFile, twoThirdsScaleImage, oneThirdScaleImage]
-  } catch (error) {
-    console.error('画像のリサイズ中にエラーが発生しました:', error)
-    throw error
-  }
+  // @2xサイズ
+  const twoThirdsScaleImage = await resizeImage(
+    originalFile,
+    fileName + '@2x',
+    originalWidth * (2 / 3),
+    originalHeight * (2 / 3),
+  )
+  // @1xのサイズ
+  // 綺麗に段階的に縮小するために@2xサイズを使用する
+  const oneThirdScaleImage = await resizeImage(
+    twoThirdsScaleImage,
+    fileName,
+    originalWidth / 3,
+    originalHeight / 3,
+  )
+  return [twoThirdsScaleImage, oneThirdScaleImage]
 }
+
+const resizeImage = async (file: File, fileName: string, newWidth: number, newHeight: number) => {
+  const dataUrl = await new Promise<string>((resolve, reject) => {
+    const reader = new FileReader()
+    reader.onload = (e) => resolve(e.target?.result as string)
+    reader.onerror = (e) => reject(e)
+    reader.readAsDataURL(file)
+  })
+  const img = await loadImage(dataUrl)
+  const canvas = document.createElement('canvas')
+  const ctx = canvas.getContext('2d')
+
+  canvas.width = Math.round(newWidth)
+  canvas.height = Math.round(newHeight)
+
+  ctx?.drawImage(img, 0, 0, canvas.width, canvas.height)
+
+  const blob = await new Promise<Blob | null>((resolve) => {
+    canvas.toBlob(resolve, file.type)
+  })
+  const resizedFileName = `${fileName}.${file.name.split('.').pop()}`
+  return new File([blob], resizedFileName, {
+    type: file.type,
+    lastModified: new Date().getTime(),
+  })
+}
+
+const loadImage = (src: string) => {
+  return new Promise<HTMLImageElement>((resolve, reject) => {
+    const img = new Image()
+    img.onload = () => resolve(img)
+    img.onerror = (e) => reject(e)
+    img.src = src
+  })
+}
+
 ```
 
 ## 試したこと
@@ -80,11 +96,10 @@ export const generateMultiResolutionImages = async (
 となっており、
 @3x→@1xへ縮小したイメージを使って解説していきます。
 
-比較しやすいように下記の画像がオリジナルです。
-サイズは414 × 300になっており、ここを目指します。
+下記の画像になるように目指します。
+サイズは414 × 300です。
 
-![original.png](<content/20240309-resize-image/original.png>)
-
+<img src="content/20240309-resize-image/original.png" alt="original-image" width="600">
 
 ### canvas(1回目)
 
@@ -93,11 +108,11 @@ canvasってなにかというと簡単にいうとHTML要素の一つで、canv
 
 **生成した画像**
 
-![canvas-1.png](<content/20240309-resize-image/canvas-1.png>)
+<img src="content/20240309-resize-image/canvas-1.png" alt="canvas-1-image-" width="600">
 
 
 ワンくん(左上)が悲しい感じになってる！
-1/3の画像に縮小したらこんなにジャギるのかびっくりしました。
+1/3の画像に縮小したらこんなにジャギるのかとびっくりしました。
 正直画像が荒くなるのって縮小から拡大した時だけだろうと思っていたので、まさかこんなところで詰まるわけないと余裕かましていた時ですね。
 今の心境はあと今週くらいでテストできますよとか自ら締切り切った自分を殴ってやりたい気持ちです。
 
@@ -110,7 +125,7 @@ canvasってなにかというと簡単にいうとHTML要素の一つで、canv
 
 **生成した画像**
 
-![sharp.png](<content/20240309-resize-image/sharp.png>)
+<img src="content/20240309-resize-image/sharp.png" alt="sharp-image" width="600">
 
 だいぶマシになったぞと思いつつ、ちょっと文字がジャギってるなぁって感じです。
 
@@ -121,7 +136,7 @@ sharpenという機能を使えば画像が鮮明になるって書いてあっ�
 ただ、懸念点としてはNode.jsの環境が必要なので、サーバー側で処理する必要があるんですよね。
 
 確かコードはこんな感じで書きました。
-```js
+```ts
 const resizedImage = await sharp(file.filepath)
   .resize(Number(req.query.width), Number(req.query.height))
   .sharpen()
@@ -144,7 +159,7 @@ Next.jsを使用してたのでAPIの実装自体は楽にできたものの、�
 
 **生成した画像**
 
-![canvas-2.png](<content/20240309-resize-image/canvas-2.png>)
+<img src="content/20240309-resize-image/canvas-2.png" alt="canvas-2-image" width="600">
 
 
 かなり綺麗に縮小することができましたね。
@@ -156,6 +171,28 @@ Next.jsを使用してたのでAPIの実装自体は楽にできたものの、�
 @2xの画像から@1xへリサイズする方法でした。
 
 これだけでわざわざsharpを使用することなく、画像の形式を変換することなくそれよりさらに綺麗に縮小させることに成功しました。
+
+
+### 並べて比較
+
+<div class="flex">
+  <div>
+    <img src="content/20240309-resize-image/original.png" alt="original-image" width="300" class="mb-0">
+    <p class="text-center">めざす画像</p>
+  </div>
+  <div>
+   <img src="content/20240309-resize-image/canvas-1.png" alt="canvas-1-image-" width="300" class="mb-0">
+    <p class="text-center">canvas(1回目)</p>
+  </div>
+  <div>
+    <img src="content/20240309-resize-image/sharp.png" alt="sharp-image" width="300" class="mb-0">
+    <p class="text-center">sharp</p>
+  </div>
+  <div>
+    <img src="content/20240309-resize-image/canvas-2.png" alt="canvas-2-image" width="300" class="mb-0">
+    <p class="text-center">canvas(段階的に縮小)</p>
+  </div>
+</div>
 
 
 ## おわり
