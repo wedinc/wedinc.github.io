@@ -99,7 +99,7 @@ const loadImage = (src: string) => {
 下記の画像はデザイナーが何らかのソフトを使ってジャギらないように縮小したもしくは、縮小せずに作った画像で、なるべく近づくように縮小していきます。
 サイズは414 × 300です。
 
-<img src="content/20240309-resize-image/original.png" alt="original-image" width="600">
+<img src="https://wedinc.github.io/content/20240309-resize-image/original.png" alt="original-image" width="600">
 
 ### canvas(1回目)
 
@@ -108,7 +108,7 @@ canvasってなにかというと簡単にいうとHTML要素の一つで、canv
 
 **生成した画像**
 
-<img src="content/20240309-resize-image/canvas-1.png" alt="canvas-1-image-" width="600">
+<img src="https://wedinc.github.io/content/20240309-resize-image/canvas-1.png" alt="canvas-1-image-" width="600">
 
 
 ワンくん(左上)が悲しい感じになってる！
@@ -125,7 +125,7 @@ canvasってなにかというと簡単にいうとHTML要素の一つで、canv
 
 **生成した画像**
 
-<img src="content/20240309-resize-image/sharp.png" alt="sharp-image" width="600">
+<img src="https://wedinc.github.io/content/20240309-resize-image/sharp.png" alt="sharp-image" width="600">
 
 だいぶマシになったぞと思いつつ、ちょっと文字がジャギってるなぁって感じです。
 
@@ -159,7 +159,7 @@ Next.jsを使用してたのでAPIの実装自体は楽にできたものの、�
 
 **生成した画像**
 
-<img src="content/20240309-resize-image/canvas-2.png" alt="canvas-2-image" width="600">
+<img src="https://wedinc.github.io/content/20240309-resize-image/canvas-2.png" alt="canvas-2-image" width="600">
 
 
 かなり綺麗に縮小することができましたね。
@@ -177,19 +177,19 @@ Next.jsを使用してたのでAPIの実装自体は楽にできたものの、�
 
 <div class="flex">
   <div>
-    <img src="content/20240309-resize-image/original.png" alt="original-image" width="300" class="mb-0">
+    <img src="https://wedinc.github.io/content/20240309-resize-image/original.png" alt="original-image" width="300" class="mb-0">
     <p class="text-center">めざす画像</p>
   </div>
   <div>
-   <img src="content/20240309-resize-image/canvas-1.png" alt="canvas-1-image-" width="300" class="mb-0">
+   <img src="https://wedinc.github.io/content/20240309-resize-image/canvas-1.png" alt="canvas-1-image-" width="300" class="mb-0">
     <p class="text-center">canvas(1回目)</p>
   </div>
   <div>
-    <img src="content/20240309-resize-image/sharp.png" alt="sharp-image" width="300" class="mb-0">
+    <img src="https://wedinc.github.io/content/20240309-resize-image/sharp.png" alt="sharp-image" width="300" class="mb-0">
     <p class="text-center">sharp</p>
   </div>
   <div>
-    <img src="content/20240309-resize-image/canvas-2.png" alt="canvas-2-image" width="300" class="mb-0">
+    <img src="https://wedinc.github.io/content/20240309-resize-image/canvas-2.png" alt="canvas-2-image" width="300" class="mb-0">
     <p class="text-center">canvas(段階的に縮小)</p>
   </div>
 </div>
