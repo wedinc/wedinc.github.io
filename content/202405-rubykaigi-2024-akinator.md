@@ -98,6 +98,8 @@ Yes/Noの情報しか得られないというのがおもしろいところで�
 <details><summary>解説</summary>
 <div>
 
+ドキュメントはこちら: [英語版](https://docs.ruby-lang.org/ja/3.3/method/Regexp/s/union.html) / [日本語版](https://docs.ruby-lang.org/en/3.3/Regexp.html#method-c-union)
+
 引数として任意の数のパターン（RegexpまたはStringのリスト or 配列）を受け取り、そのいずれかにマッチするRegexpオブジェクトを返します。
 
 ```ruby
@@ -166,6 +168,8 @@ Rubyの中ではもちろん、他の言語・ライブラリにも広まって�
 <details><summary>解説</summary>
 <div>
 
+ドキュメントはこちら: [英語版](https://docs.ruby-lang.org/en/3.3/Kernel.html#method-i-pp) / [日本語版](https://docs.ruby-lang.org/ja/3.3/class/Kernel.html#M_PP)
+
 `p` の高機能版です。要素の多い配列やハッシュオブジェクトも行折り返しやインデントを使って読みやすく表示してくれます。
 
 Ruby 2.5から、 `require "pp"` しないでも使えるようになりました。
@@ -212,6 +216,8 @@ Day 1の `Regexp.union` に続き、Day 2の `pp` (prettyprint)も田中哲（ak
 
 <details><summary>解説</summary>
 <div>
+
+ドキュメントはこちら: [英語版](https://docs.ruby-lang.org/en/3.3/Kernel.html#method-i-yield_self) / [日本語版](https://docs.ruby-lang.org/ja/3.3/class/Object.html#I_THEN)
 
 文字通り `yield self` してその値を返すメソッドです。ブロックを渡さない場合の特殊処理を除くと、文字通りこういうメソッドです。
 
