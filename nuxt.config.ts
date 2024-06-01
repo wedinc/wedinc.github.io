@@ -29,7 +29,7 @@ export default defineNuxtConfig({
     documentDriven: true,
     highlight: {
       theme: 'monokai',
-      preload: ['python', 'lua']
+      preload: ['kotlin', 'lua', 'python', 'ruby']
     }
   },
   gtag: {
@@ -38,7 +38,7 @@ export default defineNuxtConfig({
   dayjs: {
     locales: ['ja'],
     plugins: ['localizedFormat'],
-    defaultLocale: 'ja',
+    defaultLocale: 'ja'
   },
   nitro: {
     prerender: {
