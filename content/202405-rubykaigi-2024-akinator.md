@@ -1,14 +1,16 @@
 ---
 title: "RubyKaigi 2024 アキネーター🧞クイズ by WED"
-author: knu
+author: Akinori Musha (@knu)
 tags: Conference, Event, Ruby, Quiz
 Published At: May 31, 2024
 date: 2024-05-31
 image: 202405-rubykaigi-2024-akinator.png
 ---
 
+WEDの武者（[@knu](https://github.com/knu)）です。[RubyKaigi 2024](https://rubykaigi.org/2024/)の[WED](https://rubykaigi.org/2024/sponsors/#sponsor-577)ブースの右半分では、Rubyの組み込みメソッドを当てる「[アキネイター](https://jp.akinator.com/)🧞」クイズを出題しました。
+
 <style>
-img[alt="Akinator"] {
+img[alt="Booth"], img[alt="Akinator"] {
     width: 480px;
     max-width: 100%;
 }
@@ -17,11 +19,7 @@ table th:first-of-type {
 }
 </style>
 
-WEDの武者（[@knu](https://github.com/knu)）です。
-
-[RubyKaigi 2024](https://rubykaigi.org/2024/)の[WED](https://rubykaigi.org/2024/sponsors/#sponsor-577)ブースの右半分では、Rubyの組み込みメソッドを当てる「[アキネイター](https://jp.akinator.com/)🧞」クイズを出題しました。
-
-[![Akinator](/content/202405-rubykaigi-2024-akinator/Akinator.png)](/content/202405-rubykaigi-2024-akinator/Akinator.png)
+![Booth](/content/202405-rubykaigi-2024-akinator/Booth.jpg)
 
 そういえば、私の名前（Akinori）にちなんだんですか、と聞かれたりしましたが、偶然です。😄
 
@@ -29,41 +27,43 @@ WEDの武者（[@knu](https://github.com/knu)）です。
 
 ここ数年、TikTokやYouTube Shortsで流行っている遊びなのでご存じの方も多いと思いますが、いわゆる「[20の質問](https://ja.wikipedia.org/wiki/%E4%BA%8C%E5%8D%81%E3%81%AE%E8%B3%AA%E5%95%8F)」のような形式のゲームです。
 
+![Akinator](/content/202405-rubykaigi-2024-akinator/Akinator.png)
+
 出題者が想定した答え（本家だと有名人の名前）を回答者が当てるクイズの一種ですが、特徴的なのは挑戦者が出題者に対して質問をすることです。挑戦者は、Yes/Noで答えられる質問を出題者に次々と投げかけていき、Yes/Noの回答から候補を絞っていき、最終的に想定解をずばり当てることができればクリアとなります。
 
 Yes/Noの情報しか得られないというのがおもしろいところで、今回のお題であるRubyの組み込みメソッドの場合、
 
-> 「引数はいくつ取れますか？」
+「引数はいくつ取れますか？」
 
 と数を聞くことはできませんが、
 
-> 「引数の数は決まっていますか？」
-> 「引数は2個以下ですか？」
+「引数の数は決まっていますか？」<br/>
+「引数は2個以下ですか？」
 
 のようにして絞り込むことができます。
 
 今回は質問数に制限なしとしたので、
 
-> 「メソッド名は a で始まりますか？」
-> 「メソッド名は b で始まりますか？」
-> …
+「メソッド名は a で始まりますか？」<br/>
+「メソッド名は b で始まりますか？」<br/>
+…
 
 と繰り返して頭文字を特定し、
 
-> 「メソッド名の2文字目は a ですか？」
+「メソッド名の2文字目は a ですか？」
 
 と2文字目以降も順次確定していけば機械的に解けるわけですが、そこはRubyKaigiというテックカンファレンスの場ですので、みなさん手数を減らすべく、
 
-> 「メソッド名は a から m の間で始まりますか？」
-> 「いいえ」
-> 「メソッド名は n から t の間で始まりますか？」
-> 「はい」
-> …
+「メソッド名は a から m の間で始まりますか？」<br/>
+「いいえ」<br/>
+「メソッド名は n から t の間で始まりますか？」<br/>
+「はい」<br/>
+…
 
 のように二分探索を意識したり、
 
-> 「文字列を返しますか？」
-> 「破壊的メソッドですか？」
+「文字列を返しますか？」<br/>
+「破壊的メソッドですか？」
 
 とメソッドの挙動から絞り込むなど、工夫して楽しんでいただきました。
 
