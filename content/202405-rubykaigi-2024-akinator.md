@@ -1,11 +1,13 @@
 ---
 title: "RubyKaigi 2024 アキネーター🧞クイズ by WED"
-author: knu
+author: Akinori Musha (@knu)
 tags: Conference, Event, Ruby, Quiz
 Published At: May 31, 2024
 date: 2024-05-31
 image: 202405-rubykaigi-2024-akinator.png
 ---
+
+WEDの武者（[@knu](https://github.com/knu)）です。[RubyKaigi 2024](https://rubykaigi.org/2024/)の[WED](https://rubykaigi.org/2024/sponsors/#sponsor-577)ブースの右半分では、Rubyの組み込みメソッドを当てる「[アキネイター](https://jp.akinator.com/)🧞」クイズを出題しました。
 
 <style>
 img[alt="Akinator"] {
@@ -17,9 +19,6 @@ table th:first-of-type {
 }
 </style>
 
-WEDの武者（[@knu](https://github.com/knu)）です。
-
-[RubyKaigi 2024](https://rubykaigi.org/2024/)の[WED](https://rubykaigi.org/2024/sponsors/#sponsor-577)ブースの右半分では、Rubyの組み込みメソッドを当てる「[アキネイター](https://jp.akinator.com/)🧞」クイズを出題しました。
 
 [![Akinator](/content/202405-rubykaigi-2024-akinator/Akinator.png)](/content/202405-rubykaigi-2024-akinator/Akinator.png)
 
