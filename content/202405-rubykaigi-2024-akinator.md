@@ -10,7 +10,7 @@ image: 202405-rubykaigi-2024-akinator.png
 WEDの武者（[@knu](https://github.com/knu)）です。[RubyKaigi 2024](https://rubykaigi.org/2024/)の[WED](https://rubykaigi.org/2024/sponsors/#sponsor-577)ブースの右半分では、Rubyの組み込みメソッドを当てる「[アキネイター](https://jp.akinator.com/)🧞」クイズを出題しました。
 
 <style>
-img[alt="Akinator"] {
+img[alt="Booth"], img[alt="Akinator"] {
     width: 480px;
     max-width: 100%;
 }
@@ -19,14 +19,15 @@ table th:first-of-type {
 }
 </style>
 
-
-[![Akinator](/content/202405-rubykaigi-2024-akinator/Akinator.png)](/content/202405-rubykaigi-2024-akinator/Akinator.png)
+![Booth](/content/202405-rubykaigi-2024-akinator/Booth.jpg)
 
 そういえば、私の名前（Akinori）にちなんだんですか、と聞かれたりしましたが、偶然です。😄
 
 ## ゲームの概要
 
 ここ数年、TikTokやYouTube Shortsで流行っている遊びなのでご存じの方も多いと思いますが、いわゆる「[20の質問](https://ja.wikipedia.org/wiki/%E4%BA%8C%E5%8D%81%E3%81%AE%E8%B3%AA%E5%95%8F)」のような形式のゲームです。
+
+![Akinator](/content/202405-rubykaigi-2024-akinator/Akinator.png)
 
 出題者が想定した答え（本家だと有名人の名前）を回答者が当てるクイズの一種ですが、特徴的なのは挑戦者が出題者に対して質問をすることです。挑戦者は、Yes/Noで答えられる質問を出題者に次々と投げかけていき、Yes/Noの回答から候補を絞っていき、最終的に想定解をずばり当てることができればクリアとなります。
 
