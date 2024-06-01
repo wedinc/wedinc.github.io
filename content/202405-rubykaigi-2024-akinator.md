@@ -1,5 +1,5 @@
 ---
-title: "RubyKaigi 2024 アキネーター🧞クイズ by WED"
+title: "RubyKaigi 2024 アキネイター🧞クイズ by WED"
 author: Akinori Musha (@knu)
 tags: Conference, Event, Ruby, Quiz
 Published At: May 31, 2024
