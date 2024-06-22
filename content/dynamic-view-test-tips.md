@@ -10,23 +10,23 @@ image: dynamic-view-test-tips.jpeg
 
 今回は Android ONE で実際に実行している Espresso を使った UI テストの Tips を紹介しようと思います。
 
-# はじめに
+## はじめに
 
 Espresso は簡潔に UI テストを書ける非常に強力なライブラリです。しかし、実際に稼働しているプロダクトは非同期 かつ 動的に UI が変わるのが普通です。公式 Docs を読んだだけでは挙動が複雑な View に対して、どのようにテストを書けばいいか戸惑うことも多いかと思います。
 
 今回はそういったエンジニアに向けて、Espresso の Tips をまとめてみました。
 
-# 対象者
+## 対象者
 
 動的に表示内容が変わる View の Espresso テストを書くエンジニア 
 
 [https://developer.android.com/training/testing/espresso/basics](https://developer.android.com/training/testing/espresso/basics)
 
-# 実行環境
+## 実行環境
 
 Android Studio Chipmunk | 2021.2.1 patch 1
 
-# Test Libraries
+## Test Libraries
 
 2022/6/30時点の Stable Releaseを採用
 
@@ -36,7 +36,7 @@ Android Studio Chipmunk | 2021.2.1 patch 1
 
 [https://developer.android.com/jetpack/androidx/releases/test](https://developer.android.com/jetpack/androidx/releases/test)
 
-# Tips of Espresso Test
+## Tips of Espresso Test
 
 ## 1. 非同期に更新される View の場合
 
