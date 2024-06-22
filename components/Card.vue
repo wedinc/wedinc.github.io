@@ -23,7 +23,7 @@
             ? `${props.image.startsWith('/') ? '' : '/'}thumbnails/${
                 props.image
               }`
-            : '/dummy-image.jpg'
+            : '/thumbnails/dummy-image.jpg'
         "
         :alt="props.title"
       />
