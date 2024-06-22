@@ -22,9 +22,17 @@
 </template>
 
 <script setup lang="ts">
+  import { useRoute } from 'vue-router'
   import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
+
+  const route = useRoute()
+  const year = route.params.year
+
   const query: QueryBuilderParams = {
     sort: [{ date: -1 }],
-    where: { _path: { $ne: '/' } }
+    where: {
+      _path: { $ne: '/' },
+      date: { $regex: `^${year}-` }
+    }
   }
 </script>
