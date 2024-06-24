@@ -28,9 +28,7 @@
         :alt="props.title"
       />
       <div class="md:pl-8">
-        <p
-          class="mb-3 text-sm md:text-base font-normal text-stone-700 line-clamp-3"
-        >
+        <p class="mb-3 text-base font-normal text-stone-700 line-clamp-3">
           {{ props.description }}
         </p>
         <p class="text-sm font-normal text-stone-600">

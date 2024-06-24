@@ -1,12 +1,10 @@
 <template>
   <main>
-    <article
-      class="prose max-w-full md:px-20 px-6 md:text-base text-sm text-stone-800"
-    >
+    <article class="prose max-w-full md:px-20 px-6 text-base text-stone-800">
       <ContentRenderer v-if="data" :value="data" tag="article">
         <header class="md:mb-16 mb-8">
           <time
-            class="md:text-base text-sm font-medium text-stone-500"
+            class="text-base font-medium text-stone-500"
             :datetime="$dayjs(data.date).format('YYYY-MM-DD')"
             >{{ $dayjs(data.date).format('LL') }}</time
           >
@@ -15,9 +13,7 @@
           >
             {{ data.title }}
           </h1>
-          <address
-            class="author md:text-base text-sm mt-4 font-medium text-stone-600"
-          >
+          <address class="author text-base mt-4 font-medium text-stone-600">
             {{ data.author }}
           </address>
         </header>
