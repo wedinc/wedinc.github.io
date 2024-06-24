@@ -116,7 +116,7 @@ WEDの発表パートなので、LTテーマの設定背景を軽く共有して
 <a href="/content/20240624-rubykaigi-2024-wrapparty/DSCF4276.jpeg" target="_blank"><img src="/content/20240624-rubykaigi-2024-wrapparty/DSCF4276.jpeg"  width="480" alt="venue2"/></a>
 
 Ruby仲間たちとの出会いや再会に、あちこちで笑顔が溢れる会場。
-<a href="/content/20240624-rubykaigi-2024-wrapparty/Fotoram.io (3).jpeg" target="_blank"><img src="/content/20240624-rubykaigi-2024-wrapparty/Fotoram.io (3).jpeg"  width="480" alt="venue2"/></a>
+<a href="/content/20240624-rubykaigi-2024-wrapparty/Fotoram.io (3).jpg" target="_blank"><img src="/content/20240624-rubykaigi-2024-wrapparty/Fotoram.io (3).jpg"  width="480" alt="venue2"/></a>
 
 
 私は会場を歩き回って写真を撮ったり、他社のPR担当の方と情報交換をしたりしていました。なんだか同窓会のような温かい雰囲気で、緊張せずとても穏やかな気持ちで時を過ごせました☺️
