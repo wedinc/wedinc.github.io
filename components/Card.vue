@@ -20,9 +20,7 @@
         class="md:w-1/5 md:mb-0 mb-4 object-contain md:aspect-video aspect-auto"
         :src="
           props.image
-            ? `${props.image.startsWith('/') ? '' : '/'}thumbnails/${
-                props.image
-              }`
+            ? `${!props.image.startsWith('/') && '/'}thumbnails/${props.image}`
             : '/thumbnails/dummy-image.jpg'
         "
         :alt="props.title"
