@@ -16,7 +16,7 @@
       <aside
         class="hidden md:block md:w-1/5 lg:w-1/6 md:my-4 md:border-l-2 md:border-stone-500 z-10"
       >
-        <nav class="sticky top-32">
+        <nav class="sticky top-24">
           <ul class="list-none pt-8 pl-8">
             <li class="mb-10">
               <h3 class="sidebar-title">About Us</h3>
