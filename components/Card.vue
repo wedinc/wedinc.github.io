@@ -5,9 +5,9 @@
   >
     <div>
       <p class="text-sm font-medium text-stone-500">
-        <time :datetime="$dayjs(props.date).format('YYYY-MM-DD')">{{
-          $dayjs(props.date).format('LL')
-        }}</time>
+        <time :datetime="$dayjs(props.date).format('YYYY-MM-DD')">
+          {{ $dayjs(props.date).format('LL') }}
+        </time>
       </p>
       <h5
         class="md:mt-2 md:mb-4 mb-3 my-2 md:text-2xl text-lg font-semibold tracking-tight text-stone-700 font-manrope"

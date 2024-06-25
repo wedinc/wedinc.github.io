@@ -6,8 +6,9 @@
           <time
             class="text-base font-medium text-stone-500"
             :datetime="$dayjs(data.date).format('YYYY-MM-DD')"
-            >{{ $dayjs(data.date).format('LL') }}</time
           >
+            {{ $dayjs(data.date).format('LL') }}
+          </time>
           <h1
             class="md:mt-6 mt-2 mb-0 font-manrope md:text-3xl text-xl text-stone-700"
           >
