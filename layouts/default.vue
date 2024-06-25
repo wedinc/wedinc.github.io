@@ -1,10 +1,10 @@
 <template>
   <div class="flex flex-col bg-stone-100">
     <header
-      class="flex md:h-28 h-24 w-full sticky top-0 z-10 shadow-sm text-center items-center justify-center border-b-2 border-stone-500"
+      class="flex md:h-20 h-16 w-full sticky top-0 z-10 shadow-sm text-center items-center justify-center border-b-2 border-stone-500 bg-stone-50 bg-opacity-5 backdrop-blur-[1.5px]"
     >
       <h1
-        class="md:text-2xl text-xl font-semibold no-underline text-stone-700 hover:text-stone-400 font-manrope"
+        class="md:text-xl text-base font-semibold no-underline text-stone-700 hover:text-stone-400 font-manrope"
       >
         <NuxtLink to="/">WED Engineering<br />Team Blog</NuxtLink>
       </h1>
@@ -14,7 +14,7 @@
         <slot />
       </div>
       <aside
-        class="hidden md:block md:w-1/5 lg:w-1/6 md:my-4 md:border-l-2 md:border-stone-500"
+        class="hidden md:block md:w-1/5 lg:w-1/6 md:my-4 md:border-l-2 md:border-stone-500 z-10"
       >
         <nav class="sticky top-32">
           <ul class="list-none pt-8 pl-8">
