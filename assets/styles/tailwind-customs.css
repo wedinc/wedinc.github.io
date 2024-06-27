@@ -1,0 +1,7 @@
+.sidebar-title {
+  @apply mb-4 text-stone-600 text-xl font-semibold font-manrope;
+}
+
+.sidebar-link {
+  @apply mb-4 ml-1 text-stone-600 hover:text-stone-400 text-lg font-medium font-manrope;
+}

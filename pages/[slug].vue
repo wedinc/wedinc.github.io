@@ -1,11 +1,22 @@
 <template>
   <main>
-    <article class="prose max-w-full">
+    <article class="prose max-w-full md:px-20 px-6 text-base text-stone-800">
       <ContentRenderer v-if="data" :value="data" tag="article">
-        <header>
-          <h1>{{ data.title }}</h1>
-          <address class="author">{{ data.author }}</address>
-          <time :datetime="$dayjs(data.date).format('YYYY-MM-DD')">{{ $dayjs(data.date).format('LL') }}</time>
+        <header class="md:mb-16 mb-8">
+          <time
+            class="text-base font-medium text-stone-500"
+            :datetime="$dayjs(data.date).format('YYYY-MM-DD')"
+          >
+            {{ $dayjs(data.date).format('LL') }}
+          </time>
+          <h1
+            class="md:mt-6 mt-2 mb-0 font-manrope md:text-3xl text-xl text-stone-700"
+          >
+            {{ data.title }}
+          </h1>
+          <address class="author text-base mt-4 font-medium text-stone-600">
+            {{ data.author }}
+          </address>
         </header>
         <ContentRendererMarkdown :value="data" />
       </ContentRenderer>
