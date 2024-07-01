@@ -1,38 +1,28 @@
 <template>
   <NuxtLink
-    class="flex flex-col h-auto md:px-10 px-6 py-6 rounded-2xl hover:bg-stone-200 md:border-2 border border-stone-500 hover:border-stone-700"
+    class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
     :to="props.path"
   >
-    <div>
-      <p class="text-sm font-medium text-stone-500">
-        <time :datetime="$dayjs(props.date).format('YYYY-MM-DD')">
-          {{ $dayjs(props.date).format('LL') }}
-        </time>
-      </p>
+    <img
+      class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+      :src="props.image ? `thumbnails/${props.image}` : 'wed-logo.png'"
+      :alt="props.title"
+    />
+    <div class="p-4 w-full leading-normal">
       <h5
-        class="md:mt-2 md:mb-4 mb-3 my-2 md:text-2xl text-lg font-semibold tracking-tight text-stone-700 font-manrope"
+        class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
       >
         {{ props.title }}
       </h5>
-    </div>
-    <div class="flex flex-col md:flex-row">
-      <img
-        class="md:w-1/5 md:mb-0 mb-4 object-contain md:aspect-video aspect-auto"
-        :src="
-          props.image
-            ? `${!props.image.startsWith('/') && '/'}thumbnails/${props.image}`
-            : '/thumbnails/dummy-image.jpg'
-        "
-        :alt="props.title"
-      />
-      <div class="md:pl-8">
-        <p class="mb-3 text-base font-normal text-stone-700 line-clamp-3">
-          {{ props.description }}
-        </p>
-        <p class="text-sm font-normal text-stone-600">
-          {{ props.author }}
-        </p>
-      </div>
+      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        {{ props.description }}
+      </p>
+      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        <time :datetime="$dayjs(props.date).format('YYYY-MM-DD')">{{ $dayjs(props.date).format('LL') }}</time>
+      </p>
+      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        {{ props.author }}
+      </p>
     </div>
   </NuxtLink>
 </template>

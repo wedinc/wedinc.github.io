@@ -7,20 +7,20 @@ image: start-CloudComposer.png
 
 WEDでデータエンジニアをしている[thimi0412](https://twitter.com/thimi0412) こと清水です。
 
-## 始めに
+# 始めに
 
 WEDでは現在GKE上に[Airflow](https://airflow.apache.org/) の環境を構築し、[Embulk](https://www.embulk.org/) 使用してアプリケーションで使用しているCloudSQLから分析用のBigQueryにデータを転送しています。そして、自前のGEK上のAirflowからCloudComposerへの移行を現在行っている最中です。
 
 今回はCloudComposerの作成と開発運用について紹介します。
 
-## なぜCloudComposer
+# なぜCloudComposer
 
 移行の理由については以下の2点
 
 - 自前でAirlfowの環境を作成し運用している、各リソースの設定等も必要となり運用のコストが上がってしまう
 - 今後他社とのデータ連携のプロジェクトの予定もあるので、Airflowを使用してデータ連携系タスクを管理したい
 
-## 構築
+# 構築
 
 CloudComposerはv1とv2があり今回は新しいv2で作りました。(Airflowが2系なので使ってみたい&GKEがAutopilotモード等の理由)
 
@@ -63,7 +63,7 @@ AirflowウェブサーバーからAirflowの管理画面にいけます。
 
 ![Untitled](<content/start-CloudComposer/Untitled 1.png>)
 
-## DAGの管理
+# DAGの管理
 
 DAGはAirflowで使われるタスクの依存関係を整理して、どのように実行するか定義されているものです。
 
@@ -163,6 +163,6 @@ jobs:
 
 [https://cloud.google.com/blog/ja/products/identity-security/enabling-keyless-authentication-from-github-actions](https://cloud.google.com/blog/ja/products/identity-security/enabling-keyless-authentication-from-github-actions)
 
-## 終わりに
+# 終わりに
 
 まだデータ転送は現在移行中ですがデータ連携等のタスクは本番運用しています。データ転送の移行完了や運用面で気になったことやハマりどころなどあればまた記事を書こうと思っています。

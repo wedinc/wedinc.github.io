@@ -2,11 +2,7 @@
   <main>
     <ContentList v-slot="{ list }" :query="query">
       <ul>
-        <li
-          v-for="article in list"
-          :key="article._path"
-          class="mb-8 md:mx-20 mx-6"
-        >
+        <li v-for="article in list" :key="article._path" class="mb-8">
           <Card
             :title="article.title"
             :description="article.description"

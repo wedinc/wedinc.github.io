@@ -3,9 +3,6 @@ export default {
   content: [],
   theme: {
     extend: {
-      fontFamily: {
-        manrope: ['Manrope', 'sans-serif']
-      },
       typography: {
         DEFAULT: {
           css: {
