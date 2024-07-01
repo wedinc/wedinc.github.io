@@ -1,4 +1,4 @@
-const zennBlogUrl = "https://zenn.dev/p/wed_engineering";
+const zennBlogUrl = () => "https://zenn.dev/p/wed_engineering";
 const zennArticleUrl = (slug) =>
   new URL(slug, "https://zenn.dev/wed_engineering/articles/").toString();
 
