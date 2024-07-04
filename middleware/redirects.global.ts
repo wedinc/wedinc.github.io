@@ -2,7 +2,7 @@ const zennBlogUrl = () => "https://zenn.dev/p/wed_engineering";
 const zennArticleUrl = (slug) => new URL(slug, "https://zenn.dev/wed_engineering/articles/").toString();
 
 const redirects = {
-  // "" => zennBlogUrl(),
+  "": zennBlogUrl(),
   // "2018-19-tech-timeline": zennArticleUrl(""),
   // "2020-tech-timeline": zennArticleUrl(""),
   // "2023-gig": zennArticleUrl(""),
