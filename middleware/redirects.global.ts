@@ -8,7 +8,7 @@ const redirects = {
   // '2020-tech-timeline': zennArticleUrl(''),
   // '2023-gig': zennArticleUrl(''),
   // '20231116-log-analytics-using-ai': zennArticleUrl(''),
-  // '20231121-executor-meets-gcsfuse': zennArticleUrl(''),
+  "20231121-executor-meets-gcsfuse": zennArticleUrl("20231121-executor-meets-gcsfuse"),
   // '20231128-ruby-wasm': zennArticleUrl(''),
   // '20231222-my-3month-internship-record': zennArticleUrl(''),
   // '20240127-unoptimized-next-image': zennArticleUrl(''),
