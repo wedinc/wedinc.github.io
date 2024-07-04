@@ -1,6 +1,5 @@
 const zennBlogUrl = () => "https://zenn.dev/p/wed_engineering";
-const zennArticleUrl = (slug) =>
-  new URL(slug, "https://zenn.dev/wed_engineering/articles/").toString();
+const zennArticleUrl = (slug) => new URL(slug, "https://zenn.dev/wed_engineering/articles/").toString();
 
 const redirects = {
   // "" => zennBlogUrl(),
@@ -8,9 +7,7 @@ const redirects = {
   // "2020-tech-timeline": zennArticleUrl(""),
   // "2023-gig": zennArticleUrl(""),
   // "20231116-log-analytics-using-ai": zennArticleUrl(""),
-  "20231121-executor-meets-gcsfuse": zennArticleUrl(
-    "20231121-executor-meets-gcsfuse",
-  ),
+  "20231121-executor-meets-gcsfuse": zennArticleUrl("20231121-executor-meets-gcsfuse"),
   "20231128-ruby-wasm": zennArticleUrl("use-ruby-wasm-hook"),
   // "20231222-my-3month-internship-record": zennArticleUrl(""),
   "20240127-unoptimized-next-image": zennArticleUrl("next-image-unoptimized"),
@@ -28,13 +25,12 @@ const redirects = {
   // "neovim-clean-config": zennArticleUrl(""),
   // "neovim-like-a-vscode": zennArticleUrl(""),
   "start-CloudComposer": zennArticleUrl("ebdd6858394baf"),
-  // "wed-front-frameworks-2021": zennArticleUrl(""1),
+  // "wed-front-frameworks-2021": zennArticleUrl(""),
 };
 
 export default defineNuxtRouteMiddleware((to) => {
   const path = to.path.replace(/^\/|\/?$/g, "");
   const url = redirects[path];
 
-  if (url !== undefined)
-    return navigateTo(url, { external: true, redirectCode: 301 });
+  if (url !== undefined) return navigateTo(url, { external: true, redirectCode: 301 });
 });
