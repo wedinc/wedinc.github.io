@@ -8,24 +8,24 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
-    "@nuxt/content": "^2.8.5",
+    "@nuxt/content": "^2.13.4",
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
     "@nuxtjs/tailwindcss": "^6.8.0",
-    "@tailwindcss/typography": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.19",
     "@typescript-eslint/eslint-plugin": "^6.8.0",
     "@typescript-eslint/parser": "^6.8.0",
     "@vue/eslint-config-prettier": "^8.0.0",
-    "@vueuse/nuxt": "^10.5.0",
-    "dayjs-nuxt": "^2.1.9",
-    "eslint": "^8.52.0",
-    "eslint-plugin-prettier": "^5.0.1",
-    "eslint-plugin-vue": "^9.17.0",
+    "@vueuse/nuxt": "^10.11.1",
+    "dayjs-nuxt": "^2.1.11",
+    "eslint": "^8.57.1",
+    "eslint-plugin-prettier": "^5.5.5",
+    "eslint-plugin-vue": "^9.33.0",
     "nuxt": "^3.10.1",
-    "nuxt-gtag": "^1.1.1",
+    "nuxt-gtag": "^1.2.1",
     "prettier": "^3.0.3",
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "sitemap": "^7.1.1"
+    "sitemap": "^7.1.2"
   }
 }
