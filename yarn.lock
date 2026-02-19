@@ -958,7 +958,7 @@
     which "^5.0.0"
     ws "^8.19.0"
 
-"@nuxt/kit@3.21.1", "@nuxt/kit@^3.16.0":
+"@nuxt/kit@3.21.1", "@nuxt/kit@^3.10.2", "@nuxt/kit@^3.16.0":
   version "3.21.1"
   resolved "https://registry.yarnpkg.com/@nuxt/kit/-/kit-3.21.1.tgz#2e9dfe15498dd5bb6e372004f9ee55d9d8db55fc"
   integrity sha512-QORZRjcuTKgo++XP1Pc2c2gqwRydkaExrIRfRI9vFsPA3AzuHVn5Gfmbv1ic8y34e78mr5DMBvJlelUaeOuajg==
@@ -985,7 +985,7 @@
     unctx "^2.5.0"
     untyped "^2.0.0"
 
-"@nuxt/kit@^3.10.0", "@nuxt/kit@^3.10.1", "@nuxt/kit@^3.7.4", "@nuxt/kit@^3.8.2", "@nuxt/kit@^3.9.1":
+"@nuxt/kit@^3.10.0", "@nuxt/kit@^3.10.1", "@nuxt/kit@^3.7.4", "@nuxt/kit@^3.9.1":
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/@nuxt/kit/-/kit-3.10.1.tgz#d1608f02a54f8434a389d9efcf50dda8634bc135"
   integrity sha512-M9VRY0QGbG6lWOVqt69ZF96RLBUZVXyFpbBUwHnoHgjF9BXSX/MT/hrZcJicN4aPM2QRephGgsBd4U5wFmmn6g==
@@ -6826,13 +6826,14 @@ nth-check@^2.0.1, nth-check@^2.1.1:
     boolbase "^1.0.0"
 
 nuxt-gtag@^1.1.1:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/nuxt-gtag/-/nuxt-gtag-1.1.2.tgz#aa6d405b767ef4b3fca28753f21849940d604c04"
-  integrity sha512-+gStu6D7RuKnYtmaeYlV+AYmqpNEk8sfv6XRL4hVMK0DSe1GnpPi3rVyx/R5WF8xe2xJl8/CTtgrE25CIOQsHQ==
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/nuxt-gtag/-/nuxt-gtag-1.2.1.tgz#c5081ea94088dc798abc16daf30ab6b01c4a3dcd"
+  integrity sha512-2ss0HLoSmA4wiu5WDSFuVZBT5T4qH+XFqau614OK3idIYeY88uG2Lrn7Iy/xy3jpSiMM+ux/0ziEIa4n1NGcWA==
   dependencies:
-    "@nuxt/kit" "^3.8.2"
-    defu "^6.1.3"
-    pathe "^1.1.1"
+    "@nuxt/kit" "^3.10.2"
+    defu "^6.1.4"
+    pathe "^1.1.2"
+    ufo "^1.4.0"
 
 nuxt@^3.10.1:
   version "3.21.1"
@@ -9034,7 +9035,7 @@ typescript@^5.2.2:
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.3.3.tgz#b3ce6ba258e72e6305ba66f5c9b452aaee3ffe37"
   integrity sha512-pXWcraxM0uxAS+tN0AG/BF2TyqmHO014Z070UsJ+pFvYuRSq8KH8DmWpnbXe0pEPDHXZV3FcAbJkijJ5oNEnWw==
 
-ufo@^1.1.2, ufo@^1.3.2, ufo@^1.5.4, ufo@^1.6.1, ufo@^1.6.3:
+ufo@^1.1.2, ufo@^1.3.2, ufo@^1.4.0, ufo@^1.5.4, ufo@^1.6.1, ufo@^1.6.3:
   version "1.6.3"
   resolved "https://registry.yarnpkg.com/ufo/-/ufo-1.6.3.tgz#799666e4e88c122a9659805e30b9dc071c3aed4f"
   integrity sha512-yDJTmhydvl5lJzBmy/hyOAA0d+aqCBuwl818haVdYCRrWV84o7YyeVm4QlVHStqNrrJSTb6jKuFAVqAFsr+K3Q==
