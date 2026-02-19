@@ -29,6 +29,6 @@
     "sitemap": "^7.1.2"
   },
   "resolutions": {
-    "@nuxtjs/mdc": "^0.17.2"
+    "@nuxtjs/mdc": "^0.20.0"
   }
 }
