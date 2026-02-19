@@ -27,5 +27,8 @@
   },
   "dependencies": {
     "sitemap": "^7.1.2"
+  },
+  "resolutions": {
+    "@nuxtjs/mdc": "^0.17.2"
   }
 }
