@@ -20,7 +20,7 @@
     "eslint": "^8.57.1",
     "eslint-plugin-prettier": "^5.5.5",
     "eslint-plugin-vue": "^9.33.0",
-    "nuxt": "^3.10.1",
+    "nuxt": "^4.0.0",
     "nuxt-gtag": "^1.2.1",
     "prettier": "^3.0.3",
     "typescript": "^5.2.2"
