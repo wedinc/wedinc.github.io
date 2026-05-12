@@ -26,7 +26,7 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "sitemap": "^7.1.2"
+    "sitemap": "^9.0.0"
   },
   "resolutions": {
     "@nuxtjs/mdc": "^0.20.0"
